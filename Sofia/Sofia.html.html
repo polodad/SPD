@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso para Mi Amor ❤️‍🔥</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container, .galeria-container {
+      background-color: #1a1a1a;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+      border: 2px solid #ff1a1a;
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    input {
+      padding: 12px;
+      margin: 10px;
+      border: 2px solid #ff1a1a;
+      border-radius: 10px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      background-color: #ff1a1a;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e60000;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ff4d4d;
+    }
+
+    h2 {
+      color: #ff1a1a;
+      margin-bottom: 10px;
+    }
+
+    .imagenes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .imagenes img {
+      width: 200px;
+      border-radius: 15px;
+      border: 3px solid #ff1a1a;
+      box-shadow: 0 0 10px rgba(255, 26, 26, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .imagenes img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container active" id="login">
+    <h2>❤️ Solo para Mi Amor</h2>
+    <p>Escribe tu nombre para entrar al rincón secreto</p>
+    <input type="text" id="nombre" placeholder="Tu nombre aquí">
+    <br>
+    <button onclick="verificar()">Entrar</button>
+    <div id="mensaje"></div>
+  </div>
+
+  <div class="galeria-container" id="galeria">
+    <h2>Esto es solo una parte de todo lo que podemos lograr juntos... 💖</h2>
+    <div class="imagenes">
+      <img src="crear.png" alt="Crear">
+      <img src="aventura.png" alt="Aventuras">
+      <img src="china.png" alt="Momentos">
+    </div>
+  </div>
+
+  <script>
+    function verificar() {
+      const nombre = document.getElementById('nombre').value.trim().toLowerCase();
+      const mensaje = document.getElementById('mensaje');
+      const login = document.getElementById('login');
+      const galeria = document.getElementById('galeria');
+
+      if (nombre === 'sofia') {
+        login.classList.remove('active');
+        galeria.classList.add('active');
+      } else {
+        mensaje.innerHTML = "🚫 Este lugar está reservado para una persona muy especial.";
+      }
+    }
+  </script>
+
+</body>
+</html>
